@@ -11,7 +11,6 @@ function SplashScreen(props) {
             end={{ x: 1, y: 1 }}
             locations={[0, 1]}>
             <Image style={styles.image} source={require('../assets/Logo.png')} />
-            <Image style={styles.image} source={require('../assets/Logo.png')} />
         </LinearGradient>
     );
 }

@@ -12,7 +12,18 @@ function RegisterLoginScreen(props) {
                 <Text style={styles.text}>Great things are not done by impulse, but by a series of small things brought together</Text>
                 <TextInput style={styles.input} placeholder='Email' />
                 <TextInput style={styles.input} placeholder='Password'/>
-                <Text style={{top: 70}}>Forget Your Password?</Text>
+                <Text style={{top: 90}}>Forget Your Password?</Text>
+                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')} style={styles.opacity}>
+                    <LinearGradient style={styles.button} colors={(['#FD749B', '#281AC8'])}>
+                        <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>LOGIN</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
+                <Text style={{top: 50}}>Don't have an account?</Text>
+                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')} style={styles.opacity}>
+                    <LinearGradient style={styles.button} marginTop={-45} colors={(['#FD749B', '#281AC8'])}>
+                        <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>SIGN UP</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
             </View>
         </View>
         
@@ -62,3 +73,6 @@ const styles = StyleSheet.create({
 });
 
 export default RegisterLoginScreen;
+
+
+ 

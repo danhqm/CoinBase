@@ -14,6 +14,7 @@ function RegisterLoginScreen(props) {
                 <TextInput style={styles.input} placeholder='Password'/>
                 <Text style={{top: 70}}>Forget Your Password?</Text>
                 <Text style={{top: 70}}>Forget Your Password?</Text>
+                <Button title="Register"></Button>
                 <Button title="Login"></Button>
             </View>
         </View>

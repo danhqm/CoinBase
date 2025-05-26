@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from './app/screens/SplashScreen';
 import { useState, useEffect } from 'react';
 import RegisterLoginScreen from './app/screens/RegisterLoginScreen';
+import OnboardingScreen from './app/screens/OnboardingScreen';
+import TestScreen from './app/screens/testScreen';
 
 export default function App() {
 
@@ -15,6 +17,7 @@ export default function App() {
     }, 3000);
   }, []);
 
-  return <>{isShowSplash ? <SplashScreen /> : <RegisterLoginScreen />}</>
+  return (<OnboardingScreen/>);
 }
 
+// return <>{isShowSplash ? <SplashScreen /> : <RegisterLoginScreen />}</>

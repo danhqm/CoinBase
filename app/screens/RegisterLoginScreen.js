@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, Button } from 'react-native';
+import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
 import { useState } from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 
@@ -14,13 +15,13 @@ function RegisterLoginScreen(props) {
                 <TextInput style={styles.input} placeholder='Password'/>
                 <Text style={{top: 90}}>Forget Your Password?</Text>
                 <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')} style={styles.opacity}>
-                    <LinearGradient style={styles.button} colors={(['#FD749B', '#281AC8'])}>
+                    <LinearGradient style={styles.button1} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>LOGIN</Text>
                     </LinearGradient>
                 </TouchableOpacity>
-                <Text style={{top: 50}}>Don't have an account?</Text>
+                <Text style={{top: 185}}>Don't have an account?</Text>
                 <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')} style={styles.opacity}>
-                    <LinearGradient style={styles.button} marginTop={-45} colors={(['#FD749B', '#281AC8'])}>
+                    <LinearGradient style={styles.button2} marginTop={-45} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>SIGN UP</Text>
                     </LinearGradient>
                 </TouchableOpacity>
@@ -69,7 +70,23 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         textAlign: 'center',
         lineHeight: 30,
-    }
+    },
+    button1: {
+        width: 300,
+        height: 50,
+        borderRadius: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+        top: 120,
+    },
+    button2: {
+        width: 300,
+        height: 50,
+        borderRadius: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+        top: 260,   
+    },
 });
 
 export default RegisterLoginScreen;

@@ -5,29 +5,32 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 
 
-function RegisterLoginScreen(props) {
+function RegisterLoginScreen( {navigation} ) {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.imageContainer}>
                 <Image style={styles.image} source={require('../assets/boy (1).png')} />
                 <Text style={styles.text}>Great things are not done by impulse, but by a series of small things brought together</Text>
-                <TextInput style={styles.input} placeholder='Email' />
-                <TextInput style={styles.input} placeholder='Password'/>
-                <Text style={{top: 90}}>Forget Your Password?</Text>
-                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')} style={styles.opacity}>
+                <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Email' />
+                <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Password'/>
+            <View style={styles.buttonContainer}>
+                <Text style={{bottom: 30}}>Forget Your Password?</Text>
+                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
                     <LinearGradient style={styles.button1} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>LOGIN</Text>
                     </LinearGradient>
                 </TouchableOpacity>
-                <Text style={{top: 185}}>Don't have an account?</Text>
-                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')} style={styles.opacity}>
-                    <LinearGradient style={styles.button2} marginTop={-45} colors={(['#FD749B', '#281AC8'])}>
+            </View>
+            <View style={styles.buttonContainer2}>
+                <Text style={{bottom: 15}}>Don't have an account?</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+                    <LinearGradient style={styles.button2} marginTop={20} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>SIGN UP</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
-        </View>
-        
+            </View>
+        </SafeAreaView>
     );
 }
 
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 12,
         borderRadius: 5,
-        borderColor: '#d1d1d1',
+        borderColor: '#c2bbba',
     },
     image: {
         width: 94,
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#e5e5e5',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        top: 125
+        top: 100
     },
     text: {
         fontSize: 16,
@@ -77,15 +80,23 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center',
-        top: 120,
     },
     button2: {
         width: 300,
         height: 50,
         borderRadius: 5,
         alignItems: 'center',
+        justifyContent: 'center', 
+    },
+    buttonContainer: {
+        top: 100,
+        alignItems: 'center',
         justifyContent: 'center',
-        top: 260,   
+    },
+    buttonContainer2: {
+        top: 150,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
 

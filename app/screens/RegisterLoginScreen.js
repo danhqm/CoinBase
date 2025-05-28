@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
 import { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
 
@@ -14,7 +15,9 @@ function RegisterLoginScreen( {navigation} ) {
                 <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Email' />
                 <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Password'/>
             <View style={styles.buttonContainer}>
+                <TouchableOpacity onPress={() => navigation.navigate('RecoverPassword')}>
                 <Text style={{bottom: 30}}>Forget Your Password?</Text>
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
                     <LinearGradient style={styles.button1} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>LOGIN</Text>

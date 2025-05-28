@@ -1,27 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, TouchableOpacity, Alert,} from 'react-native';
+import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, Button, TouchableOpacity, Alert,} from 'react-native';
 import { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
 
-
-function RecoverPasswordScreen(props) {
+function NewsletterScreen(props) {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.imageContainer}>
-                <Image style={styles.image} source={require('../assets/undraw_forgot_password_gi2d.png')} />
-                <MaskedView style={styles.mView} maskElement={<Text style={styles.label}>Recover Password</Text>}>
-                    <LinearGradient colors={['#FD749B', '#281AC8']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ flex: 1 }}/>
-                </MaskedView>
+                <Image style={styles.image} source={require('../assets/undraw_newsletter_vovu.png')} />
+                    <MaskedView style={styles.mView} maskElement={<Text style={styles.label}>Subscribe To Our Newsletter To Receive Weekly Updates</Text>}>
+                        <LinearGradient colors={['#FD749B', '#281AC8']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={{ flex: 1 }}/>
+                    </MaskedView>
                 <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Email' />
             </View>
             <View style={styles.container2}>
-                <Text style={styles.text}>How well we communicate is determined not by how well we say things, but how well we are understood.</Text>
-                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
-                    <LinearGradient style={styles.button} colors={(['#FD749B', '#281AC8'])}>
-                        <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>SUBMIT</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
+                <Text style={styles.text}>We hate spam just as much as you do and will not spam your email</Text>
+                    <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
+                        <LinearGradient style={styles.button} colors={(['#FD749B', '#281AC8'])}>
+                            <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>SUBSCRIBE</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#e5e5e5',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        bottom: 30
+        top: 40
     },
     input: {
         height: 40,
@@ -54,8 +53,8 @@ const styles = StyleSheet.create({
         borderColor: '#c2bbba',
     },
     image: {
-        width: 177,
-        height: 130,
+        width: 212,
+        height: 162,
         resizeMode: 'contain'
     },
     imageContainer: {
@@ -76,9 +75,9 @@ const styles = StyleSheet.create({
         lineHeight: 30,
     },
     mView: {
-        height: 19.17,
-        width: 200,
-        top: 25,
+        height: 50,
+        width: 300,
+        top: 20,
     },
     label: {
         fontSize: 24,
@@ -96,4 +95,5 @@ const styles = StyleSheet.create({
         top: 75   
     },
 });
-export default RecoverPasswordScreen;
+
+export default NewsletterScreen;

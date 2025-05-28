@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import OnboardingScreen from './app/screens/OnboardingScreen';
 import RegisterLoginScreen from './app/screens/RegisterLoginScreen';
 import SignUpScreen from './app/screens/SignUpScreen';
+import RecoverPasswordScreen from './app/screens/RecoverPasswordScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
             <Stack.Screen name="Onboarding" component={OnboardingScreen} />
             <Stack.Screen name="RegisterLogin" component={RegisterLoginScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} />
+            <Stack.Screen name="RecoverPassword" component={RecoverPasswordScreen} />
           </>
         )}
       </Stack.Navigator>

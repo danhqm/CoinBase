@@ -18,7 +18,7 @@ function RegisterLoginScreen( {navigation} ) {
                 <TouchableOpacity onPress={() => navigation.navigate('RecoverPassword')}>
                 <Text style={{bottom: 30}}>Forget Your Password?</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
                     <LinearGradient style={styles.button1} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>LOGIN</Text>
                     </LinearGradient>

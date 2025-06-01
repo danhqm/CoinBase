@@ -33,15 +33,20 @@ const PasswordStrengthMeter = ({ password }) => {
 }
 
 
-function SignUpScreen(props) {
+function SignUpScreen({ navigation }) {
+    const [inputText, setInputText] = React.useState('');
     const [password, setPassword] = React.useState('');
+
+    const handlePress = () => {
+        navigation.navigate('Dashboard', {userInput: inputText});
+    }
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.imageContainer}>
                 <Image style={styles.image} source={require('../assets/boy (1).png')} />
                     <Text style={styles.text}>Innovation distinguishes between a leader and a follower</Text>
-                    <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Full Name' />
+                    <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Full Name' value={inputText} onChangeText={setInputText} />
                     <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Email'/>
                     <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Password' secureTextEntry value={password} onChangeText={setPassword}/>
                     <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Confirm Password' secureTextEntry/>
@@ -50,7 +55,7 @@ function SignUpScreen(props) {
                 <PasswordStrengthMeter password={password} />
             </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
+                <TouchableOpacity onPress={handlePress}>
                     <LinearGradient style={styles.button} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>SIGN UP</Text>
                     </LinearGradient>

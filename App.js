@@ -9,6 +9,7 @@ import RegisterLoginScreen from './app/screens/RegisterLoginScreen';
 import SignUpScreen from './app/screens/SignUpScreen';
 import RecoverPasswordScreen from './app/screens/RecoverPasswordScreen';
 import NewsletterScreen from './app/screens/NewsletterScreen';
+import DashboardScreen from './app/screens/DashboardScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ export default function App() {
             <Stack.Screen name="SignUp" component={SignUpScreen} />
             <Stack.Screen name="RecoverPassword" component={RecoverPasswordScreen} />
             <Stack.Screen name="Newsletter" component={NewsletterScreen} />
+            <Stack.Screen name="Dashboard" component={DashboardScreen} />
           </>
         )}
       </Stack.Navigator>

@@ -1,6 +1,4 @@
-import React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, TouchableOpacity, Alert,} from 'react-native';
-import { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
 

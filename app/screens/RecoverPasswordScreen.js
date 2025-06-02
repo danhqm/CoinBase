@@ -29,11 +29,9 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#e5e5e5', 
     },
     container2:{
         flex: 1,
-        backgroundColor: '#e5e5e5',
         alignItems: 'center',
         justifyContent: 'flex-start',
         bottom: 30
@@ -58,7 +56,6 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         flex: 1,
-        backgroundColor: '#e5e5e5',
         alignItems: 'center',
         justifyContent: 'flex-start',
         top: 100

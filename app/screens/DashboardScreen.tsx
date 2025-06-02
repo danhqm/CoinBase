@@ -70,7 +70,6 @@ function DashboardScreen({ route }: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        top: 70,
     },
     container1: {
         alignItems: 'flex-start',
@@ -84,16 +83,15 @@ const styles = StyleSheet.create({
     },
     mView: {
         height: 30,
-        width: '40%',
+        width: '100%',
         top: 20,
     },
     label: {
         fontSize: 24,
         fontFamily: 'Poppins',
         fontWeight: 'bold',
-        flexWrap: 'wrap',
-        textAlign: 'center',
-        color: 'white'
+        textAlign: 'left',
+        left: 29
     },
     text: {
         fontSize: 14,
@@ -102,8 +100,9 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         textAlign: 'left',
         color: '#2F2F2F',
-        top: 20,
-        paddingLeft: 30
+        top: 18,
+        paddingLeft: 30,
+        letterSpacing: 0.15,
     },
     list: {
         paddingHorizontal: 20,

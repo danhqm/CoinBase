@@ -46,7 +46,7 @@ function SignUpScreen({ navigation }) {
             <View style={styles.imageContainer}>
                 <Image style={styles.image} source={require('../assets/boy (1).png')} />
                     <Text style={styles.text}>Innovation distinguishes between a leader and a follower</Text>
-                    <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Full Name' value={inputText} onChangeText={setInputText} />
+                    <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Username' value={inputText} onChangeText={setInputText} />
                     <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Email'/>
                     <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Password' secureTextEntry value={password} onChangeText={setPassword}/>
                     <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Confirm Password' secureTextEntry/>
@@ -68,7 +68,6 @@ function SignUpScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e5e5e5', 
     },
     input: {
         height: 40,
@@ -90,7 +89,6 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         flex: 1,
-        backgroundColor: '#e5e5e5',
         alignItems: 'center',
         justifyContent: 'flex-start',
         top: 70
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        top: 200
+        top: 230
     },
     button: {
         width: 193,
@@ -138,7 +136,7 @@ const styles = StyleSheet.create({
         color: '#444',
     },
     meter: {
-        top: 170,
+        top: 200,
         width: '100%',
         paddingLeft: 50,
         paddingRight: 50,

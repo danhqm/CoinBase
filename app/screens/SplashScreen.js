@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Image, } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 

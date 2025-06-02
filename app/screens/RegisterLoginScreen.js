@@ -1,10 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
-import { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
-
 
 function RegisterLoginScreen( {navigation} ) {
     return (
@@ -40,7 +36,6 @@ function RegisterLoginScreen( {navigation} ) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#e5e5e5', 
     },
     input: {
         height: 40,
@@ -62,7 +57,6 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         flex: 1,
-        backgroundColor: '#e5e5e5',
         alignItems: 'center',
         justifyContent: 'flex-start',
         top: 100

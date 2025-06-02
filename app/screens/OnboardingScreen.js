@@ -94,7 +94,6 @@ function OnboardingScreen({ navigation }) {
 const styles = StyleSheet.create({
     safeContainer: {
         flex: 1,
-        backgroundColor: '#E5E5E5',
     },
     imageContainer: {
         alignItems: 'center',

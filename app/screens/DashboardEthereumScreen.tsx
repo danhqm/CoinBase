@@ -2,23 +2,23 @@ import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet, Platform, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 
-function DashboardBitcoin() {
+function DashboardEthereumScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.container1}>
-                <Text style={styles.text}>Bitcoin Currency</Text>
+                <Text style={styles.text}>Ethereum</Text>
             </View>
             <View style={styles.container2}>
                 <Text style={styles.text1}>
-                    <Text style={{ fontWeight: 'bold' }}>N440.00</Text> is our conversion rate for every 0.1 BTC on this platform
+                    <Text style={{ fontWeight: 'bold' }}>N500.00</Text> is our conversion rate for every 0.1 ETH on this platform
                 </Text>
-                <LinearGradient colors={['#FF8000', '#E34141']} start={{ x: 1, y: 0 }} end={{ x: 1, y: 1 }} style={styles.card}>
+                <LinearGradient colors={['#00E0FF', '#0047FF']} start={{ x: 1, y: 0 }} end={{ x: 1, y: 1 }} style={styles.card}>
                 </LinearGradient>
-                <Image style={{ width: 319, height: 200, zIndex: 1, position: 'absolute', }} source={require('../assets/bitcoin.png')} />
+                <Image style={{ width: 319, height: 200, zIndex: 1, position: 'absolute', }} source={require('../assets/ethereum.png')} />
             </View>
             <View style={styles.container3}>
                 <Text style={styles.text2}>The total value you derived here will be the amount you'll be receiving during the total transaction process</Text>
-                <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Bitcoin Amount' />
+                <TextInput style={styles.input} placeholderTextColor='#2F2F2F' placeholder='Ethereum Amount' />
                 <TouchableOpacity onPress={() => Alert.alert('You tapped the button!')}>
                     <LinearGradient style={styles.button} colors={(['#FD749B', '#281AC8'])}>
                         <Text style={{fontSize: 15, fontFamily: 'Poppins', color: 'white', fontWeight: 'bold'}}>CONTINUE</Text>
@@ -121,4 +121,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default DashboardBitcoin;
+export default DashboardEthereumScreen;

@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, SafeAreaView, Text, StyleSheet, FlatList, Image} from 'react-native';
+import { View, SafeAreaView, Text, StyleSheet, FlatList, Image, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
+import { useNavigation } from '@react-navigation/native';
+
 
 const cards = [
   {
@@ -35,11 +37,31 @@ const cards = [
   
 ];
 
-const Card = ({ icon }: { icon: any; }) => (
-  <View style={styles.cardContent}>
-    <Image source={icon} style={styles.icon} />
-  </View>
-);
+const Card = ({ icon, id }: { icon: any; id: string }) => {
+  const navigation = useNavigation<any>();
+
+  const handlePress = () => {
+    if (id === '1') {
+      navigation.navigate('Bitcoin');
+    } else if (id === '2') {
+      navigation.navigate('Ethereum');
+    } else if (id === '3') {
+      navigation.navigate('Amazon');
+    } else if (id === '4') {
+      navigation.navigate('Apple');
+    } else if (id === '5') {
+      navigation.navigate('Steam');
+    } else if (id === '6') {
+      navigation.navigate('Google');
+    } 
+  };
+
+  return (
+    <TouchableOpacity onPress={handlePress} style={styles.cardContent}>
+      <Image source={icon} style={styles.icon} />
+    </TouchableOpacity>
+  )
+};
 
 function DashboardScreen({ route }: any) {
     const { userInput = 'User' } = route.params || {};
@@ -55,7 +77,7 @@ function DashboardScreen({ route }: any) {
             </View>
             <View style={styles.container2}>
             <FlatList data = {cards} keyExtractor={(item) => item.id} renderItem={({ item }) => (
-                <Card icon={item.icon}/>
+                <Card icon={item.icon} id={item.id}/>
             )}
             contentContainerStyle={styles.listContent}
             style={styles.list}

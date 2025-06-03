@@ -1,18 +1,25 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './app/screens/SplashScreen';
-import { useState, useEffect } from 'react';
 import OnboardingScreen from './app/screens/OnboardingScreen';
 import RegisterLoginScreen from './app/screens/RegisterLoginScreen';
 import SignUpScreen from './app/screens/SignUpScreen';
 import RecoverPasswordScreen from './app/screens/RecoverPasswordScreen';
 import NewsletterScreen from './app/screens/NewsletterScreen';
 import DashboardScreen from './app/screens/DashboardScreen';
-import { useNavigation } from 'expo-router';
+import DashboardBitcoinScreen from './app/screens/DashboardBitcoinScreen';
+import DashboardEthereumScreen from './app/screens/DashboardEthereumScreen';
+import DashboardAmazonScreen from './app/screens/DashboardAmazonScreen';
+import DashboardAppleScreen from './app/screens/DashboardAppleScreen';
+import DashboardSteamScreen from './app/screens/DashboardSteamScreen';
+import DashboardGoogleScreen from './app/screens/DashboardGoogleScreen';
+
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import DashboardBitcoinScreen from './app/screens/DashboardBitcoinScreen';
+import { useNavigation } from 'expo-router';
+import { useState, useEffect } from 'react';
 
 function CustomBackButton() {
   const navigation = useNavigation();
@@ -37,13 +44,7 @@ function CustomBackButton() {
   );
 }
 
-
-
-
 const Stack = createNativeStackNavigator();
-
-
-
 
 export default function App() {
 
@@ -55,25 +56,28 @@ export default function App() {
     }, 3000);
   }, []);
 
-
-  return (<DashboardBitcoinScreen/>);
-  // return (
-  //   <NavigationContainer>
-  //     <Stack.Navigator screenOptions={{ headerShown: false }}>
-  //       {isShowSplash ? (
-  //         <Stack.Screen name="Splash" component={SplashScreen} />
-  //       ) : (
-  //         <>
-  //           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-  //           <Stack.Screen name="RegisterLogin" component={RegisterLoginScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}} />
-  //           <Stack.Screen name="SignUp" component={SignUpScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}} />
-  //           <Stack.Screen name="RecoverPassword" component={RecoverPasswordScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
-  //           <Stack.Screen name="Newsletter" component={NewsletterScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
-  //           <Stack.Screen name="Dashboard" component={DashboardScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
-  //           <Stack.Screen name="Bitcoin" component={DashboardBitcoinScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
-  //         </>
-  //       )}
-  //     </Stack.Navigator>
-  //   </NavigationContainer>
-  // )
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {isShowSplash ? (
+          <Stack.Screen name="Splash" component={SplashScreen} />
+        ) : (
+          <>
+            <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+            <Stack.Screen name="RegisterLogin" component={RegisterLoginScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}} />
+            <Stack.Screen name="SignUp" component={SignUpScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}} />
+            <Stack.Screen name="RecoverPassword" component={RecoverPasswordScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Newsletter" component={NewsletterScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Dashboard" component={DashboardScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Bitcoin" component={DashboardBitcoinScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Ethereum" component={DashboardEthereumScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Amazon" component={DashboardAmazonScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Apple" component={DashboardAppleScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Steam" component={DashboardSteamScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+            <Stack.Screen name="Google" component={DashboardGoogleScreen} options = {{headerLeft: CustomBackButton, headerShown: true, headerTitle : ''}}/>
+          </>
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
